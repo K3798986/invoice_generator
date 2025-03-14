@@ -1,0 +1,80 @@
+// src/app/invoice-items/invoice-items.component.scss
+.invoice-items {
+    margin-bottom: 20px;
+  
+    h2 {
+      color: #3498db;
+      margin-bottom: 15px;
+      font-size: 22px;
+      border-bottom: 2px solid #2ecc71;
+      padding-bottom: 5px;
+    }
+  
+    table {
+      border: 1px solid #ecf0f1;
+      border-radius: 8px;
+      overflow: hidden;
+  
+      th {
+        background-color: #3498db;
+        color: white;
+      }
+  
+      td {
+        background-color: #fff;
+      }
+  
+      input {
+        border: none;
+        width: 100%;
+        background: transparent;
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid #2ecc71;
+        }
+      }
+  
+      @media (max-width: 480px) {
+        display: block;
+        overflow-x: auto; // Horizontal scroll for mobile
+        white-space: nowrap; // Prevent wrapping
+      }
+    }
+  
+    .btn-primary {
+      background-color: #2ecc71;
+      color: white;
+      margin-top: 15px;
+      display: inline-block; // Ensure button stays inline on desktop
+  
+      &:hover {
+        background-color: #27ae60;
+      }
+  
+      @media (max-width: 480px) {
+        width: 100%; // Full width on mobile
+        display: block; // Stack button
+        margin-bottom: 10px;
+      }
+    }
+  
+    .total {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #27ae60;
+      text-align: right;
+      padding: 10px;
+      background-color: #f9fbfd;
+      border-radius: 6px;
+  
+      @media (max-width: 480px) {
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  
+    .total-note {
+      font-size: 12px;
+      color: #7f8c8d;
+    }
+  }

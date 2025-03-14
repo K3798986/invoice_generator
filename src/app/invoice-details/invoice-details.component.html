@@ -1,0 +1,12 @@
+<!-- src/app/invoice-details/invoice-details.component.html -->
+<div class="invoice-details">
+  <h2>Invoice Details</h2>
+  <div class="form-group">
+    <label for="invoiceNumber">Invoice Number *</label>
+    <input type="text" id="invoiceNumber" [(ngModel)]="invoiceNumber" (ngModelChange)="onInputChange()" required>
+  </div>
+  <div class="form-group">
+    <label for="invoiceDate">Date *</label>
+    <input type="date" id="invoiceDate" [(ngModel)]="invoiceDate" (ngModelChange)="onInputChange()" required>
+  </div>
+</div>

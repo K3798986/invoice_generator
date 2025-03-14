@@ -1,0 +1,36 @@
+<div class="invoice-items">
+  <h2>Invoice Items</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>SL No.</th>
+        <th>Description</th>
+        <th>HSN Code</th>
+        <th>Quantity</th>
+        <th>Price (₹)</th>
+        <th>GST %</th>
+        <th>GST Amt</th>
+        <th>Amount (₹)</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td><input type="text" [(ngModel)]="item.description" (ngModelChange)="onInputChange()"></td>
+        <td><input type="number" [(ngModel)]="item.hsn" (ngModelChange)="onInputChange()" min="0"></td>
+        <td><input type="number" [(ngModel)]="item.quantity" (ngModelChange)="onInputChange()" min="0"></td>
+        <td><input type="number" [(ngModel)]="item.price" (ngModelChange)="onInputChange()" min="0"></td>
+        <td><input type="number" [(ngModel)]="item.gstper" (ngModelChange)="onInputChange()" min="0" max="100"></td>
+        <td>{{ item.gstamt || 0 }}</td> <!-- Display calculated GST Amount -->
+        <td>{{ (item.quantity * item.price) + item.gstamt || 0 }}</td> <!-- Total per item including GST -->
+        <td><button (click)="removeItem(i)" class="remove-btn">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="addItem()" class="btn btn-primary">+ Add Item</button>
+  <div class="total">
+    Total: ₹{{ calculateTotal() || 0 }}
+    <span class="total-note">Zero Rupees Only</span>
+  </div>
+</div>
